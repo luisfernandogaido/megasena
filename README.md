@@ -20,3 +20,9 @@ Gerando 20 jogos com 8 dezenas:
 ```
 $ megasena -j 10 -d 8
 ```
+
+Gerando em arquivo:
+
+```
+$ megasena -j 100 > jogos.txt
+```
