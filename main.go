@@ -37,14 +37,14 @@ func gera(n int) ([]int, error) {
 	if n < 0 || n > maiorNumero {
 		return nil, errors.New(fmt.Sprintf("impossível gerar %v números", n))
 	}
-	mapa := make(map[int32]bool)
+	mapa := make(map[int]bool)
 	for len(mapa) < n {
-		dezena := rand.Int31n(maiorNumero) + 1
+		dezena := rand.Intn(maiorNumero) + 1
 		mapa[dezena] = true
 	}
 	numeros := make([]int, 0, n)
 	for k := range mapa {
-		numeros = append(numeros, int(k))
+		numeros = append(numeros, k)
 	}
 	sort.Ints(numeros)
 	return numeros, nil
